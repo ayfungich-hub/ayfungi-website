@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AY! Fungi — Receta & Historia</title>
+<meta name="description" content="Skanove kutinë AY! Fungi? Mirë se erdhe — zbulo historinë tonë dhe një recetë champignon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1d3b14; --forest-deep:#122a0d;
+    --lime:#acc252; --lime-deep:#8ea63e;
+    --cream:#efe5d5; --paper:#f8f4ec;
+    --ink:#1b1d15; --ink-soft:#4a4c3f;
+    --pink:#d46a87; --pink-deep:#b14a67;
+    --ochre:#d9a441;
+    --line: rgba(29,59,20,0.16);
+    --max: 720px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Manrope', sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:500; margin:0; color:var(--forest); }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+
+  .lang-toggle{
+    display:flex; border:1.5px solid var(--forest); border-radius:100px;
+    overflow:hidden; font-size:0.8rem; font-weight:700; width:fit-content;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; padding:6px 14px; cursor:pointer;
+    font-family:'Manrope',sans-serif; font-weight:700; color:var(--forest);
+  }
+  .lang-toggle button.active{ background:var(--forest); color:var(--cream); }
+
+  header{ padding:18px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo{ font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem; text-decoration:none; color:var(--forest); }
+  .logo span{ color:var(--lime-deep); }
+
+  .hero{ background:var(--pink); color:var(--cream); padding:40px 0 48px; margin-bottom:8px; }
+  .hero .wrap{ text-align:center; }
+  .hero .kicker{ font-weight:700; font-size:0.82rem; letter-spacing:0.02em; opacity:0.85; margin-bottom:10px; display:block; }
+  .hero h1{ color:var(--cream); font-size:clamp(1.7rem,6vw,2.3rem); line-height:1.15; }
+  .hero p{ margin-top:14px; opacity:0.9; font-size:1.02rem; }
+
+  section{ padding:36px 0; }
+  .story p{ color:var(--ink-soft); margin:0 0 14px; }
+  .story .pull{
+    font-family:'Fraunces',serif; font-style:italic; font-size:1.25rem; color:var(--forest);
+    border-left:3px solid var(--lime); padding-left:16px; margin:20px 0;
+  }
+
+  .divider{ height:1px; background:var(--line); margin:0 auto; max-width:var(--max); }
+
+  .recipe{ background:var(--paper); }
+  .recipe-head{ text-align:center; margin-bottom:24px; }
+  .recipe-head .eyebrow{ color:var(--pink-deep); font-weight:700; font-size:0.82rem; }
+  .recipe-head h2{ font-size:1.7rem; margin-top:8px; }
+  .recipe-head p{ color:var(--ink-soft); margin-top:8px; }
+
+  .meta-row{ display:flex; justify-content:center; gap:26px; margin:20px 0 30px; flex-wrap:wrap; }
+  .meta{ text-align:center; }
+  .meta .num{ font-family:'Fraunces',serif; font-weight:600; font-size:1.3rem; color:var(--pink-deep); display:block; }
+  .meta .lbl{ font-size:0.78rem; color:var(--ink-soft); }
+
+  .card{ background:var(--cream); border:1px solid var(--line); border-radius:8px; padding:24px; margin-bottom:18px; }
+  .card h3{ font-size:1.1rem; margin-bottom:14px; color:var(--pink-deep); }
+  ul.ingredients{ list-style:none; margin:0; padding:0; }
+  ul.ingredients li{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--line); font-size:0.96rem; }
+  ul.ingredients li:last-child{ border-bottom:none; }
+  ul.ingredients li b{ color:var(--forest); font-weight:700; }
+
+  ol.steps{ margin:0; padding-left:20px; }
+  ol.steps li{ margin-bottom:14px; color:var(--ink-soft); }
+  ol.steps li::marker{ color:var(--pink-deep); font-weight:700; }
+
+  .note{
+    background:var(--ochre); color:var(--forest-deep); border-radius:8px;
+    padding:16px 20px; font-size:0.92rem; font-weight:600; margin-top:8px;
+  }
+
+  footer{ background:var(--forest-deep); color:rgba(239,229,213,0.75); padding:30px 0; text-align:center; margin-top:20px; }
+  footer a{ color:var(--lime); text-decoration:none; font-weight:700; }
+  footer p{ font-size:0.85rem; margin:6px 0 0; }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <a href="index.html" class="logo">AY<span>!</span> Fungi</a>
+  <div class="lang-toggle">
+    <button data-lang="sq" class="active">SHQ</button>
+    <button data-lang="en">EN</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker" data-i18n="hero.kicker">Skanove kutinë jonë? Mirë se erdhe!</span>
+    <h1 data-i18n="hero.title">Historia jonë &amp; një recetë për ty</h1>
+    <p data-i18n="hero.lead">Njihu shkurt me fermën, pastaj gatuaj diçka të shpejtë e të shijshme me champignon tanë.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <h2 data-i18n="story.title">Kush jemi</h2>
+    <p data-i18n="story.p1">AY! Fungi është një fermë champignon në Konjuh, Lipjan — e ndërtuar për prodhim gjatë gjithë vitit, pa ndërprerje sezonale.</p>
+    <p class="pull" data-i18n="story.pull">"Çdo kuti champignon që del nga AY! Fungi mban emrin tonë — prandaj e trajtojmë si të jetë për familjen tonë."</p>
+    <p data-i18n="story.p2">110 ton/vit, 3 dhoma prodhimi, certifikuar ISO, HACCP dhe GlobalG.A.P. — dhe pjesë e energjisë sonë vjen nga paneli solar fotovoltaik.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="recipe">
+  <div class="wrap">
+    <div class="recipe-head">
+      <span class="eyebrow" data-i18n="recipe.eyebrow">Receta e ditës</span>
+      <h2 data-i18n="recipe.title">Champignon të pjekura me hudhër, gjalpë &amp; majdanoz</h2>
+      <p data-i18n="recipe.lead">10 minuta përgatitje, e mrekullueshme si meze ose garniturë.</p>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta"><span class="num">4</span><span class="lbl" data-i18n="recipe.servings">racione</span></div>
+      <div class="meta"><span class="num">10'</span><span class="lbl" data-i18n="recipe.prep">përgatitje</span></div>
+      <div class="meta"><span class="num">15'</span><span class="lbl" data-i18n="recipe.cook">gatim</span></div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="recipe.ingTitle">Përbërësit</h3>
+      <ul class="ingredients">
+        <li><span data-i18n="recipe.ing1">Champignon AY! Fungi</span> <b>500 g</b></li>
+        <li><span data-i18n="recipe.ing2">Gjalpë</span> <b>40 g</b></li>
+        <li><span data-i18n="recipe.ing3">Hudhër (thelb, të grira)</span> <b>3</b></li>
+        <li><span data-i18n="recipe.ing4">Majdanoz i freskët, i grirë</span> <b data-i18n="recipe.tbsp2">2 lugë</b></li>
+        <li><span data-i18n="recipe.ing5">Vaj ulliri</span> <b data-i18n="recipe.tbsp1">1 lugë</b></li>
+        <li><span data-i18n="recipe.ing6">Kripë &amp; piper i zi</span> <b data-i18n="recipe.taste">sipas shijes</b></li>
+        <li><span data-i18n="recipe.ing7">Lëng limoni</span> <b data-i18n="recipe.tspHalf">½ lugë çaji</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="recipe.stepsTitle">Hapat</h3>
+      <ol class="steps">
+        <li data-i18n="recipe.s1">Pastro champignon-et me një leckë të lagur (mos i lash nën ujë) dhe preji përgjysmë.</li>
+        <li data-i18n="recipe.s2">Ngroh vajin e ullirit në tigan në zjarr mesatarisht të fortë.</li>
+        <li data-i18n="recipe.s3">Shto champignon-et me faqen e prerë poshtë; mos i lëviz 2-3 minuta që të marrin ngjyrë.</li>
+        <li data-i18n="recipe.s4">Kthej anën, shto gjalpin dhe hudhrën; gatuaj edhe 3-4 minuta duke i lëvizur butësisht.</li>
+        <li data-i18n="recipe.s5">Hiq nga zjarri, shto kripë, piper, majdanoz dhe lëng limoni. Shërbe menjëherë, ngrohtë.</li>
+      </ol>
+      <div class="note" data-i18n="recipe.note">Këshillë: shto pak djathë parmixhano të grirë sipër për një version edhe më të pasur.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" data-i18n="footer.back">← Kthehu te ayfungi.com</a>
+    <p data-i18n="footer.tag">Champignon të freskëta nga Kosova — rritur me dashuri.</p>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    "hero.kicker":"Scanned our box? Welcome!",
+    "hero.title":"Our story & a recipe for you",
+    "hero.lead":"Get to know our farm, then cook something quick and delicious with our champignons.",
+    "story.title":"Who we are",
+    "story.p1":"AY! Fungi is a champignon farm in Konjuh, Lipjan — built for year-round production with no seasonal gaps.",
+    "story.pull":"\u201cEvery box of champignons that leaves AY! Fungi carries our name — so we treat it like it's for our own family.\u201d",
+    "story.p2":"110 tons/year, 3 production rooms, certified ISO, HACCP and GlobalG.A.P. — and part of our power comes from solar panels.",
+    "recipe.eyebrow":"Recipe of the day",
+    "recipe.title":"Garlic butter roasted mushrooms with parsley",
+    "recipe.lead":"10 minutes to prepare, wonderful as a side or a snack.",
+    "recipe.servings":"servings","recipe.prep":"prep","recipe.cook":"cook",
+    "recipe.ingTitle":"Ingredients",
+    "recipe.ing1":"AY! Fungi champignons","recipe.ing2":"Butter","recipe.ing3":"Garlic cloves, minced",
+    "recipe.ing4":"Fresh parsley, chopped","recipe.ing5":"Olive oil","recipe.ing6":"Salt & black pepper",
+    "recipe.ing7":"Lemon juice",
+    "recipe.tbsp2":"2 tbsp","recipe.tbsp1":"1 tbsp","recipe.taste":"to taste","recipe.tspHalf":"½ tsp",
+    "recipe.stepsTitle":"Steps",
+    "recipe.s1":"Clean the mushrooms with a damp cloth (don't rinse under water) and halve them.",
+    "recipe.s2":"Heat the olive oil in a pan over medium-high heat.",
+    "recipe.s3":"Add the mushrooms cut-side down; don't move them for 2-3 minutes so they brown.",
+    "recipe.s4":"Flip, add the butter and garlic; cook another 3-4 minutes, stirring gently.",
+    "recipe.s5":"Remove from heat, add salt, pepper, parsley and lemon juice. Serve immediately, warm.",
+    "recipe.note":"Tip: add a little grated parmesan on top for an even richer version.",
+    "footer.back":"← Back to ayfungi.com",
+    "footer.tag":"Fresh champignons from Kosovo — grown with love."
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    if(el.dataset.sq === undefined){ el.dataset.sq = el.innerHTML; }
+    if(lang==='sq'){ el.innerHTML = el.dataset.sq; }
+    else{
+      const key = el.getAttribute('data-i18n');
+      if(translations.en[key]) el.innerHTML = translations.en[key];
+    }
+  });
+}
+document.querySelectorAll('.lang-toggle button').forEach(btn=>{
+  btn.addEventListener('click', ()=> setLang(btn.dataset.lang));
+});
+setLang('sq');
+</script>
+
+</body>
+</html>
